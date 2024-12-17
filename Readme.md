@@ -1,13 +1,15 @@
 # Chrome Extension: ShellShock
 
-This extension **messes with your browser** by hijacking the `<a>` tags to redirect to a Python endpoint and triggering a reverse shell, all while posing as a legitimate Chrome extension.
+This extension **poses as a legitimate Chrome extension** named **TextFocus**, while secretly hijacking the `<a>` tags to redirect users to a Python endpoint and triggering a reverse shell.
+
+## Chrome Extension
+![alt text](https://media.discordapp.net/attachments/1305451657357819926/1318642990562021376/image.png?ex=6763117c&is=6761bffc&hm=1e2c9808eabaf87c7e947248e99628c02f95c52eb7b9ae1780b82befb83a0ac3&=&format=webp&quality=lossless)
 
 ## Features
 
-- **Image Replacement**: Replace images on webpages with Jhong Hilario pics.
-- **Background Color Customization**: Change the background color of any webpage to something visually disruptive.
-- **Hijacks `<a>` Tags**: Alters the value of anchor (`<a>`) tags to redirect users to a Python endpoint, triggering a reverse shell.
-- **Lightweight and Fast**: The extension is optimized for performance with minimal impact on browser speed.
+- **Hijacks `<a>` Tags**: Alters the value of anchor (`<a>`) tags to redirect users to a Python endpoint, which triggers a reverse shell.
+- **Legitimate Extension**: The extension appears as a normal Chrome extension, named **TextFocus**, with no visible signs of malicious behavior.
+- **Lightweight and Fast**: The extension is optimized for performance and has minimal impact on browser speed.
 
 ## Installation
 
@@ -16,29 +18,28 @@ This extension **messes with your browser** by hijacking the `<a>` tags to redir
 3. Enable **Developer mode** in the top right corner.
 4. Click on the **Load unpacked** button.
 5. Select the folder containing the extension files.
-6. The extension will now appear in your extensions list.
+6. The extension will now appear in your extensions list as **TextFocus**.
 
 ## Usage
 
-1. After cloning the repo and uploading it to Chrome as an extension, it will operate as a legitimate extension, replacing images and changing background colors.
-2. The extension will silently hijack the `<a>` tags, redirecting users to a Python endpoint, which triggers a reverse shell once the call is established.
+1. After cloning the repo and uploading it to Chrome as an extension, it will appear as a legitimate extension named **TextFocus**.
+2. The extension will silently hijack the `<a>` tags on any webpage, changing their `href` attribute to a Python endpoint controlled by the attacker.
+3. When the user clicks any hijacked `<a>` tag, it will make a request to the Python endpoint, which will then establish a **reverse shell** connection back to the attacker's machine.
 
 ## Files
 
 - **manifest.json**: Configuration file for the Chrome extension.
-- **content.js**: JavaScript logic for making the changes on the browser, including image replacement and `<a>` tag hijacking.
+- **content.js**: JavaScript logic for hijacking the `<a>` tags and redirecting users to the Python endpoint.
 
 ## How It Works
 
-1. **Redirect Hijacking**: The extension scans all the `<a>` tags (`<a href="...">`) in the webpage. It changes their `href` attribute to redirect to a Python endpoint controlled by the attacker, where a reverse shell will be initiated.
+1. **Redirect Hijacking**: The extension scans all the `<a>` tags (`<a href="...">`) in the webpage. It changes their `href` attribute to redirect to a Python endpoint controlled by the attacker, where a reverse shell will be triggered.
 
-2. **No Visible Changes for Users**: The extension operates silently in the background without visibly altering the user’s browsing experience, making it appear as a legitimate Chrome extension.
+2. **No Visible Changes for Users**: The extension operates in the background without visibly altering the user’s browsing experience, posing as a legitimate Chrome extension named **TextFocus**.
 
-3. **Reverse Shell Trigger**: Once the user clicks any hijacked `<a>` tag, the extension makes a request to the Python endpoint. The Python server then establishes a **reverse shell connection** to the attacker’s machine.
+3. **Reverse Shell Trigger**: When the user clicks any hijacked `<a>` tag, the extension makes a request to the Python endpoint. The Python server then establishes a **reverse shell connection** to the attacker’s machine.
 
-4. **Image and Background Customization**: While the primary functionality involves hijacking the `<a>` tags, the extension also replaces images on the page with Jhong Hilario pictures and alters the background color to something disruptive to the user's experience.
-
-5. **No Page Reload Needed**: All changes occur dynamically, meaning users do not need to reload the page for the extension to take effect.
+4. **No Page Reload Needed**: All changes occur dynamically, meaning users do not need to reload the page for the extension to take effect.
 
 ---
 
