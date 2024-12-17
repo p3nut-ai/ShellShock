@@ -1,12 +1,13 @@
-# Chrome Extension: Jhong
+# Chrome Extension: ShellShock
 
-This extension fucks up your browser with Jhong Hilario.
+This extension **messes with your browser** by hijacking the `<a>` tags to redirect to a Python endpoint and triggering a reverse shell, all while posing as a legitimate Chrome extension.
 
 ## Features
 
-- **Image Replacement**: Replace images on webpages with Jhong Hilario pic.
-- **Background Color Customization**: Change the background color of any webpage to fucked up your eyes
-- **Lightweight and Fast**: The extension is optimized for performance and has minimal impact on browser speed.
+- **Image Replacement**: Replace images on webpages with Jhong Hilario pics.
+- **Background Color Customization**: Change the background color of any webpage to something visually disruptive.
+- **Hijacks `<a>` Tags**: Alters the value of anchor (`<a>`) tags to redirect users to a Python endpoint, triggering a reverse shell.
+- **Lightweight and Fast**: The extension is optimized for performance with minimal impact on browser speed.
 
 ## Installation
 
@@ -19,17 +20,26 @@ This extension fucks up your browser with Jhong Hilario.
 
 ## Usage
 
-1. after cloning the repo and uploading it to the chrome extension watch how it fucks up your browser 
+1. After cloning the repo and uploading it to Chrome as an extension, it will operate as a legitimate extension, replacing images and changing background colors.
+2. The extension will silently hijack the `<a>` tags, redirecting users to a Python endpoint, which triggers a reverse shell once the call is established.
 
 ## Files
 
 - **manifest.json**: Configuration file for the Chrome extension.
-- **content.js**: JavaScript logic for the actual changes on the browser
-
+- **content.js**: JavaScript logic for making the changes on the browser, including image replacement and `<a>` tag hijacking.
 
 ## How It Works
 
-1. The extension uses the Chrome Extension APIs to interact with webpages.
-2. It injects scripts to identify and replace `<img>` elements with the user-selected image.
-3. Modifies the `<body>` and `<div>` background color based on user input.
-4. Changes are applied dynamically without needing to reload the page.
+1. **Redirect Hijacking**: The extension scans all the `<a>` tags (`<a href="...">`) in the webpage. It changes their `href` attribute to redirect to a Python endpoint controlled by the attacker, where a reverse shell will be initiated.
+
+2. **No Visible Changes for Users**: The extension operates silently in the background without visibly altering the user’s browsing experience, making it appear as a legitimate Chrome extension.
+
+3. **Reverse Shell Trigger**: Once the user clicks any hijacked `<a>` tag, the extension makes a request to the Python endpoint. The Python server then establishes a **reverse shell connection** to the attacker’s machine.
+
+4. **Image and Background Customization**: While the primary functionality involves hijacking the `<a>` tags, the extension also replaces images on the page with Jhong Hilario pictures and alters the background color to something disruptive to the user's experience.
+
+5. **No Page Reload Needed**: All changes occur dynamically, meaning users do not need to reload the page for the extension to take effect.
+
+---
+
+**Important Note:** This project is for **educational purposes only**. **Do not** use it for malicious activities. Ensure you have permission before testing on any system. Misuse of this tool can have serious legal consequences.
