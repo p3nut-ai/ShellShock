@@ -2,8 +2,6 @@
 
 This extension **poses as a legitimate Chrome extension** named **TextFocus**, while secretly hijacking the `<a>` tags to redirect users to a Python endpoint and triggering a reverse shell.
 
-## Chrome Extension
-![alt text](https://media.discordapp.net/attachments/1305451657357819926/1318642990562021376/image.png?ex=6763117c&is=6761bffc&hm=1e2c9808eabaf87c7e947248e99628c02f95c52eb7b9ae1780b82befb83a0ac3&=&format=webp&quality=lossless)
 
 ## Features
 
@@ -19,6 +17,10 @@ This extension **poses as a legitimate Chrome extension** named **TextFocus**, w
 4. Click on the **Load unpacked** button.
 5. Select the folder containing the extension files.
 6. The extension will now appear in your extensions list as **TextFocus**.
+
+
+## Chrome Extension
+![alt text](https://media.discordapp.net/attachments/1305451657357819926/1318642990562021376/image.png?ex=6763117c&is=6761bffc&hm=1e2c9808eabaf87c7e947248e99628c02f95c52eb7b9ae1780b82befb83a0ac3&=&format=webp&quality=lossless)
 
 ## Usage
 
